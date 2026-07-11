@@ -1,0 +1,14 @@
+node_modules
+.next
+out
+build
+shots
+shots-review
+*.tsbuildinfo
+.env
+.env.local
+.git
+.gitignore
+README.md
+DESIGN.md
+RedRoom_Studio_план.md

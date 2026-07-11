@@ -10,6 +10,8 @@ const securityHeaders = [
 ];
 
 const nextConfig = {
+  // Компактный автономный билд для Docker (копируем только то, что нужно для запуска).
+  output: 'standalone',
   // Лендинг — самодостаточный проект внутри монорепо Jarvis; фиксируем корень трейсинга.
   outputFileTracingRoot: import.meta.dirname,
   // Все изображения локальные (public/images) — внешние источники не разрешены.

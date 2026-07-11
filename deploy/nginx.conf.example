@@ -1,0 +1,23 @@
+# Пример nginx-конфига для nvrskmusic.ru — реверс-прокси на Docker-контейнер (порт 3000).
+# Разместить как /etc/nginx/sites-available/nvrskmusic.ru, затем:
+#   ln -s /etc/nginx/sites-available/nvrskmusic.ru /etc/nginx/sites-enabled/
+#   nginx -t && systemctl reload nginx
+# SSL добавляется автоматически командой certbot (см. DEPLOY.md) — она сама допишет
+# сюда блок 443 и редирект с 80 на 443, вручную ничего дописывать не нужно.
+
+server {
+    listen 80;
+    server_name nvrskmusic.ru www.nvrskmusic.ru;
+
+    location / {
+        proxy_pass http://127.0.0.1:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
