@@ -33,7 +33,7 @@ export default function Hero() {
           fill
           priority
           quality={86}
-          className="object-cover object-center"
+          className="object-cover object-[57%_center] md:object-center"
           sizes="100vw"
         />
       </div>
@@ -43,12 +43,9 @@ export default function Hero() {
 
       <div className="relative mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-start px-5 pt-28 pb-20 md:justify-center md:px-8">
         <div className="max-w-3xl">
-          <div className="mb-6 inline-flex items-center gap-2.5 rounded-full hairline bg-white/5 px-4 py-1.5 backdrop-blur-sm">
-            <span className="h-1.5 w-1.5 rounded-full bg-red" />
-            <span className="text-xs font-medium uppercase tracking-wide2 text-muted">
-              {SITE.tagline}
-            </span>
-          </div>
+          <p className="mb-6 font-display text-sm font-semibold uppercase tracking-mega text-muted">
+            {SITE.tagline}
+          </p>
 
           <h1 className="font-display text-4xl font-bold leading-[0.98] sm:text-5xl md:text-6xl lg:text-7xl">
             Научим играть на{' '}
@@ -69,27 +66,26 @@ export default function Hero() {
                 <Spark className="h-5 w-5" />
               </span>
               <p className="text-[15px] leading-relaxed text-ink">
-                Подпишись на наш Telegram-канал{' '}
-                <span className="font-semibold text-red">{SITE.telegramChannelHandle}</span> и
-                получи <span className="font-semibold">первое занятие бесплатно</span>.
+                <span className="font-semibold">Первое занятие — бесплатно.</span> Оставь заявку — подберём
+                преподавателя и удобное время, расскажем про программу. Без оплаты и обязательств.
               </p>
             </div>
             <div className="mt-5 flex flex-col gap-3 sm:flex-row">
               <a
+                href="#contact"
+                className="btn-red group inline-flex flex-1 items-center justify-center gap-2 rounded-xl px-6 py-3.5 font-display text-base font-semibold uppercase tracking-wide text-white cursor-pointer"
+              >
+                Записаться на бесплатное
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </a>
+              <a
                 href={SITE.telegramChannel}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-red group inline-flex flex-1 items-center justify-center gap-2 rounded-xl px-6 py-3.5 font-display text-base font-semibold uppercase tracking-wide text-white cursor-pointer"
-              >
-                <Telegram className="h-5 w-5" />
-                Получить пробное
-              </a>
-              <a
-                href="#trial"
                 className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl hairline-strong bg-white/5 px-6 py-3.5 font-display text-base font-semibold uppercase tracking-wide text-ink backdrop-blur-sm transition-colors duration-200 hover:bg-white/10 cursor-pointer"
               >
-                Записаться
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                <Telegram className="h-5 w-5" />
+                Telegram-канал
               </a>
             </div>
           </div>

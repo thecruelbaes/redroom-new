@@ -78,10 +78,12 @@ const jsonLd = {
   telephone: SITE.phones[0].display,
   address: {
     '@type': 'PostalAddress',
+    streetAddress: 'ул. Энгельса, 47',
     addressLocality: 'Новороссийск',
     addressRegion: 'Краснодарский край',
     addressCountry: 'RU',
   },
+  geo: { '@type': 'GeoCoordinates', latitude: 44.713951, longitude: 37.77526 },
   areaServed: { '@type': 'City', name: 'Новороссийск' },
   sameAs: [SITE.telegramChannel],
   description: SITE.description,

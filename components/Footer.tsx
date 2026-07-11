@@ -44,7 +44,16 @@ export default function Footer() {
                   {SITE.phones[0].display}
                 </a>
               </li>
-              <li className="text-sm text-faint">{SITE.address}</li>
+              <li>
+                <a
+                  href={SITE.mapUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-faint transition-colors hover:text-muted cursor-pointer"
+                >
+                  {SITE.address}
+                </a>
+              </li>
               <li className="text-sm text-faint">{SITE.workHours}</li>
               <li>
                 <a href="/privacy" className="text-sm text-faint hover:text-muted cursor-pointer">

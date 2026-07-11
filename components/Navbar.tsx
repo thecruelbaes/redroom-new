@@ -5,9 +5,10 @@ import Logo from './Logo';
 
 const LINKS = [
   { href: '#services', label: 'Уроки' },
+  { href: '#how', label: 'Как начать' },
   { href: '#teachers', label: 'Преподаватели' },
   { href: '#studio', label: 'Студия' },
-  { href: '#reviews', label: 'Отзывы' },
+  { href: '#faq', label: 'Вопросы' },
 ];
 
 export default function Navbar() {
@@ -56,7 +57,7 @@ export default function Navbar() {
 
         <div className="flex items-center gap-3">
           <a
-            href="#trial"
+            href="#contact"
             className="btn-red hidden rounded-xl px-5 py-2.5 font-display text-sm font-semibold uppercase tracking-wide text-white md:inline-block cursor-pointer"
           >
             Пробное занятие
@@ -92,7 +93,7 @@ export default function Navbar() {
             ))}
           </ul>
           <a
-            href="#trial"
+            href="#contact"
             onClick={() => setOpen(false)}
             className="btn-red mt-3 block rounded-xl px-5 py-3 text-center font-display font-semibold uppercase text-white cursor-pointer"
           >

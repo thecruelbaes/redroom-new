@@ -152,6 +152,21 @@
 }
 .pulse-ring { animation: softpulse 2.4s ease-out infinite; }
 
+/* ===== Telegram FAB (мягкий синий пульс, ненавязчиво) ===== */
+.tg-fab {
+  background: linear-gradient(160deg, #2aabee 0%, #229ed9 100%);
+  box-shadow: 0 12px 30px -8px rgba(34, 158, 217, 0.65);
+}
+.tg-fab:hover {
+  filter: brightness(1.06);
+}
+/* Кольцо-пульс — отдельный слой, чтобы не перебивать тень круга */
+@keyframes tgpulse {
+  0% { box-shadow: 0 0 0 0 rgba(42, 171, 238, 0.4); }
+  70%, 100% { box-shadow: 0 0 0 12px rgba(42, 171, 238, 0); }
+}
+.tg-pulse { animation: tgpulse 3.4s ease-out infinite; }
+
 /* ===== Marquee ===== */
 @keyframes marquee {
   from { transform: translateX(0); }

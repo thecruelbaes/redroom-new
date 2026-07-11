@@ -57,14 +57,23 @@ export default function ContactForm() {
             </span>
           </div>
           <h2 className="font-display text-4xl font-bold leading-[1.02] md:text-5xl">
-            Запишись на <span className="text-flame">урок</span>
+            Запишись на <span className="text-flame">бесплатное</span>
           </h2>
           <p className="mt-5 max-w-md text-base leading-relaxed text-muted">
-            Оставь заявку — перезвоним, ответим на вопросы и подберём удобное время. Первое занятие
-            бесплатно для подписчиков канала.
+            Оставь заявку — перезвоним, расскажем про программу и стоимость, подберём преподавателя и
+            удобное время. Первое занятие — бесплатно и без обязательств.
           </p>
 
           <div className="mt-9 space-y-4">
+            <a
+              href={SITE.phones[0].href}
+              className="flex items-center gap-3 font-display text-xl font-semibold text-ink transition-colors hover:text-red cursor-pointer"
+            >
+              <span className="flex h-11 w-11 flex-none items-center justify-center rounded-xl bg-surface text-red">
+                <PhoneSmall />
+              </span>
+              {SITE.phones[0].display}
+            </a>
             <a
               href={SITE.telegramChannel}
               target="_blank"
@@ -76,19 +85,19 @@ export default function ContactForm() {
               </span>
               {SITE.telegramChannelHandle}
             </a>
-            <a
-              href={SITE.phones[0].href}
-              className="flex items-center gap-3 font-display text-xl font-semibold text-ink transition-colors hover:text-red cursor-pointer"
-            >
-              <span className="flex h-11 w-11 flex-none items-center justify-center rounded-xl bg-surface text-red">
-                <PhoneSmall />
-              </span>
-              {SITE.phones[0].display}
-            </a>
           </div>
 
           <div className="mt-8 space-y-1 text-sm text-faint">
-            <p>{SITE.address}</p>
+            <p>
+              <a
+                href={SITE.mapUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:text-muted cursor-pointer"
+              >
+                {SITE.address}
+              </a>
+            </p>
             <p>{SITE.workHours}</p>
           </div>
         </div>

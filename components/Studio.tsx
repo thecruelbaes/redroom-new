@@ -9,8 +9,8 @@ export default function Studio() {
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <SectionHeading
           eyebrow="Студия"
-          title={<>Атмосфера RedRoom</>}
-          sub="Сценический свет, живые инструменты, своя репетиционная точка и студия звукозаписи. Место, куда хочется возвращаться."
+          title={<>Наша студия</>}
+          sub="Живые инструменты, уютное пространство и всё для занятий: класс для уроков, репетиционная точка и уголок звукозаписи. Место, куда хочется приходить играть."
         />
 
         <div className="mt-14 grid auto-rows-[220px] grid-cols-2 gap-4 md:grid-cols-4">
@@ -25,7 +25,7 @@ export default function Studio() {
                   src={g.src}
                   alt={g.alt}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
                   sizes="(max-width: 768px) 50vw, 25vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-obsidian/60 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
