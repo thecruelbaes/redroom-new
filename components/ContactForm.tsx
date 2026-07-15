@@ -57,7 +57,7 @@ export default function ContactForm() {
             </span>
           </div>
           <h2 className="font-display text-4xl font-bold leading-[1.02] md:text-5xl">
-            Запишись на <span className="text-flame">бесплатное</span>
+            Запишись на <span className="text-flame">бесплатное</span> занятие
           </h2>
           <p className="mt-5 max-w-md text-base leading-relaxed text-muted">
             Оставь заявку — перезвоним, расскажем про программу и стоимость, подберём преподавателя и

@@ -75,7 +75,7 @@ export default function Hero() {
                 href="#contact"
                 className="btn-red group inline-flex flex-1 items-center justify-center gap-2 rounded-xl px-6 py-3.5 font-display text-base font-semibold uppercase tracking-wide text-white cursor-pointer"
               >
-                Записаться на бесплатное
+                Записаться на бесплатное занятие
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
               <a

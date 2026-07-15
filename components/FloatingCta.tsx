@@ -7,10 +7,25 @@ export default function FloatingCta() {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setShow(window.scrollY > 600);
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    const contact = document.getElementById('contact');
+    let contactVisible = false;
+    const update = () => setShow(window.scrollY > 600 && !contactVisible);
+    const io = contact
+      ? new IntersectionObserver(
+          (entries) => {
+            contactVisible = entries[0].isIntersecting;
+            update();
+          },
+          { rootMargin: '0px 0px -25% 0px' },
+        )
+      : null;
+    io?.observe(contact!);
+    update();
+    window.addEventListener('scroll', update, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', update);
+      io?.disconnect();
+    };
   }, []);
 
   return (

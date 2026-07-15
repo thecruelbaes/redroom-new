@@ -24,7 +24,7 @@ export default function TrialCta() {
               href="#contact"
               className="btn-red group inline-flex items-center justify-center gap-2.5 rounded-xl px-8 py-4 font-display text-base font-semibold uppercase tracking-wide text-white cursor-pointer"
             >
-              Записаться на бесплатное
+              Записаться на бесплатное занятие
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>
             <a
