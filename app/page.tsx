@@ -13,6 +13,9 @@ import Footer from '@/components/Footer';
 import FloatingCta from '@/components/FloatingCta';
 import TelegramFab from '@/components/TelegramFab';
 
+// Периодически подхватывать отзывы из Supabase (плюс мгновенно — через revalidatePath из админки).
+export const revalidate = 300;
+
 export default function Home() {
   return (
     <>

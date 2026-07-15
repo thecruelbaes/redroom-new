@@ -1,9 +1,11 @@
-import { REVIEWS, RATING_SUMMARY } from '@/lib/content';
+import { RATING_SUMMARY } from '@/lib/content';
+import { getPublicReviews } from '@/lib/reviews';
 import { Star } from './Icons';
 import Reveal from './Reveal';
 import SectionHeading from './SectionHeading';
 
-export default function Reviews() {
+export default async function Reviews() {
+  const reviews = await getPublicReviews();
   return (
     <section id="reviews" className="relative py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
@@ -26,8 +28,8 @@ export default function Reviews() {
         </Reveal>
 
         <div className="mt-10 grid gap-5 md:grid-cols-3">
-          {REVIEWS.map((r, i) => (
-            <Reveal key={r.name} delay={i * 80}>
+          {reviews.map((r, i) => (
+            <Reveal key={`${r.name}-${i}`} delay={i * 80}>
               <figure className="glow-card flex h-full flex-col rounded-2xl hairline bg-surface p-6">
                 <div className="flex gap-0.5 text-red">
                   {Array.from({ length: 5 }).map((_, j) => (

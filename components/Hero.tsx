@@ -91,18 +91,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-
-      {/* scroll indicator */}
-      <a
-        href="#services"
-        aria-label="Прокрутить вниз"
-        className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-faint md:flex cursor-pointer"
-      >
-        <span className="text-[10px] uppercase tracking-mega">Листай</span>
-        <span className="flex h-9 w-5 justify-center rounded-full border border-white/15 pt-1.5">
-          <span className="h-2 w-1 animate-bounce rounded-full bg-red" />
-        </span>
-      </a>
     </section>
   );
 }

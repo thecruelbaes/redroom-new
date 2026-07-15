@@ -8,6 +8,8 @@ export default function Services() {
   return (
     <section id="services" className="relative overflow-hidden py-24 md:py-32">
       <div className="absolute inset-0 bg-stage-glow opacity-60" />
+      {/* мягкая растушёвка сверху — убирает резкий стык с hero */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-obsidian to-transparent" />
       <div className="relative mx-auto max-w-7xl px-5 md:px-8">
         <SectionHeading
           eyebrow="Направления"
