@@ -12,7 +12,7 @@ export default async function Reviews() {
         <SectionHeading
           eyebrow="Отзывы"
           title={<>Что говорят ученики</>}
-          sub="Живые впечатления тех, кто уже занимается в RedRoom."
+          sub="Что пишут те, кто уже занимается у нас."
         />
 
         <Reveal>

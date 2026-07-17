@@ -54,9 +54,9 @@ export default function Hero() {
           </h1>
 
           <p className="mt-7 max-w-xl text-lg leading-relaxed text-muted">
-            Индивидуальные уроки в <span className="text-ink">Новороссийске</span> — для любого
-            возраста и уровня. Живые инструменты, опытные преподаватели и атмосфера, в которой
-            хочется играть.
+            Барабаны и гитара в <span className="text-ink">Новороссийске</span> — для взрослых и детей,
+            с любого уровня. Занимаемся один на один и сразу берём инструмент в руки: с первых занятий
+            разбираем <span className="text-ink">твои песни</span>, а не гоняем гаммы из учебника.
           </p>
 
           {/* free-trial hook */}
@@ -66,8 +66,9 @@ export default function Hero() {
                 <Spark className="h-5 w-5" />
               </span>
               <p className="text-[15px] leading-relaxed text-ink">
-                <span className="font-semibold">Первое занятие — бесплатно.</span> Оставь заявку — подберём
-                преподавателя и удобное время, расскажем про программу. Без оплаты и обязательств.
+                <span className="font-semibold">Первое занятие — бесплатно.</span> Придёшь, попробуешь
+                инструмент, познакомишься с преподавателем — и сам решишь, твоё это или нет. Без предоплаты
+                и обязательного абонемента.
               </p>
             </div>
             <div className="mt-5 flex flex-col gap-3 sm:flex-row">

@@ -16,8 +16,8 @@ export default function TrialCta() {
             Первое занятие — <span className="text-flame">бесплатно</span>
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted">
-            Оставь заявку и приходи на пробный урок по барабанам или гитаре. Познакомишься с
-            преподавателем, попробуешь инструмент вживую — без оплаты и обязательств.
+            Оставь заявку и приходи на пробный по барабанам или гитаре. Возьмёшь инструмент, познакомишься
+            с преподавателем, попробуешь — и решишь. Без оплаты и обязательств.
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a
