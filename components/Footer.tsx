@@ -45,6 +45,11 @@ export default function Footer() {
                 </a>
               </li>
               <li>
+                <a href={`mailto:${SITE.email}`} className="text-sm text-faint transition-colors hover:text-muted cursor-pointer">
+                  {SITE.email}
+                </a>
+              </li>
+              <li>
                 <a
                   href={SITE.mapUrl}
                   target="_blank"

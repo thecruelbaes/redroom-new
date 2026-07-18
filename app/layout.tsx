@@ -76,9 +76,10 @@ const jsonLd = {
   '@id': siteUrl,
   url: siteUrl,
   telephone: SITE.phones[0].display,
+  email: SITE.email,
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'ул. Энгельса, 47',
+    streetAddress: 'ул. Энгельса, 47 / Революции, 16',
     addressLocality: 'Новороссийск',
     addressRegion: 'Краснодарский край',
     addressCountry: 'RU',

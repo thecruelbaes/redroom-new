@@ -10,7 +10,7 @@ export default function TrialCta() {
       <div className="relative mx-auto max-w-3xl px-5 text-center md:px-8">
         <Reveal>
           <p className="font-display text-sm font-semibold uppercase tracking-mega text-muted">
-            Специальное предложение
+            Попробуй бесплатно
           </p>
           <h2 className="mt-6 font-display text-4xl font-bold leading-[1.02] md:text-6xl">
             Первое занятие — <span className="text-flame">бесплатно</span>

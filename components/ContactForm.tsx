@@ -102,6 +102,11 @@ export default function ContactForm() {
               </a>
             </p>
             <p>{SITE.workHours}</p>
+            <p>
+              <a href={`mailto:${SITE.email}`} className="transition-colors hover:text-muted cursor-pointer">
+                {SITE.email}
+              </a>
+            </p>
           </div>
         </div>
 
