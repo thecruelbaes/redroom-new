@@ -63,6 +63,9 @@ export default function ContactForm() {
             Оставь номер — перезвоним, расскажем про программу и цены, подберём преподавателя и удобное
             время. Первое занятие бесплатно и ни к чему не обязывает.
           </p>
+          <p className="mt-3 max-w-md text-sm italic leading-relaxed text-faint">
+            Не стесняйся: даже самые крутые барабанщики когда-то не знали, как держать палочки.
+          </p>
 
           <div className="mt-9 space-y-4">
             <a
