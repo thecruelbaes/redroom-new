@@ -47,6 +47,7 @@ def run_file(path: str, config) -> int:
     from faster_whisper.audio import decode_audio
 
     from .asr import build_asr
+    from .cloud import CloudError
     from .pipeline import Pipeline
     from .vad import SAMPLE_RATE
 
@@ -54,11 +55,14 @@ def run_file(path: str, config) -> int:
     audio = decode_audio(path, sampling_rate=SAMPLE_RATE)
     log.info("Loaded %s: %.1fs", path, len(audio) / SAMPLE_RATE)
 
-    t0 = time.perf_counter()
-    asr = build_asr(config)
-    log.info("Model loaded in %.1fs", time.perf_counter() - t0)
-
-    result = Pipeline(config, asr).run(audio)
+    try:
+        t0 = time.perf_counter()
+        asr = build_asr(config)
+        log.info("Model loaded in %.1fs", time.perf_counter() - t0)
+        result = Pipeline(config, asr).run(audio)
+    except CloudError as e:
+        print(f"Error: {e}", file=sys.stderr)
+        return 2
     log.info("Timings: vad=%.2fs asr=%.2fs, chunks=%d, speech=%s",
              result.timings.get("vad", 0), result.timings.get("asr", 0),
              result.chunk_count, result.speech_detected)

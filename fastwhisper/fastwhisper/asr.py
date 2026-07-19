@@ -13,6 +13,10 @@ log = logging.getLogger(__name__)
 
 
 def build_asr(config: AppConfig):
+    if config.cloud.enabled:
+        from .cloud import CloudASR
+
+        return CloudASR(config.cloud, config.language)
     return LocalASR(config.model, config.language)
 
 
