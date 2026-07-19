@@ -21,8 +21,6 @@ _VK_V = 0x56
 _KEYEVENTF_KEYUP = 0x0002
 _INPUT_KEYBOARD = 1
 
-ULONG_PTR = ctypes.POINTER(ctypes.c_ulong)
-
 
 class _KEYBDINPUT(ctypes.Structure):
     _fields_ = [

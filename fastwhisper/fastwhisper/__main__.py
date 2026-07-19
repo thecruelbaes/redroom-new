@@ -19,9 +19,14 @@ def main() -> int:
     parser.add_argument("-v", "--verbose", action="store_true", help="Debug logging")
     args = parser.parse_args()
 
+    import os
+
     from .config import load_config
 
-    config = load_config(args.config)
+    config_path = args.config
+    if config_path is None and os.path.exists("config.yaml"):
+        config_path = "config.yaml"  # pick up the config next to the project
+    config = load_config(config_path)
     if args.language:
         config.language = args.language
     if args.model:
@@ -49,11 +54,16 @@ def run_file(path: str, config) -> int:
     from .asr import build_asr
     from .cloud import CloudError
     from .pipeline import Pipeline
-    from .vad import SAMPLE_RATE
+    from .vad import SAMPLE_RATE, detect_speech
 
     log = logging.getLogger("fastwhisper.cli")
     audio = decode_audio(path, sampling_rate=SAMPLE_RATE)
     log.info("Loaded %s: %.1fs", path, len(audio) / SAMPLE_RATE)
+
+    if not detect_speech(audio, config.vad):
+        # no reason to load a model for silence
+        log.info("No speech detected, nothing to transcribe")
+        return 0
 
     try:
         t0 = time.perf_counter()
