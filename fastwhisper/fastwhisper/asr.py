@@ -6,10 +6,14 @@ import ctranslate2
 import numpy as np
 from faster_whisper import WhisperModel
 
-from .config import ModelConfig
+from .config import AppConfig, ModelConfig
 from .postprocess import Segment
 
 log = logging.getLogger(__name__)
+
+
+def build_asr(config: AppConfig):
+    return LocalASR(config.model, config.language)
 
 
 class LocalASR:

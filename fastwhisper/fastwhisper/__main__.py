@@ -46,7 +46,7 @@ def main() -> int:
 def run_file(path: str, config) -> int:
     from faster_whisper.audio import decode_audio
 
-    from .asr import LocalASR
+    from .asr import build_asr
     from .pipeline import Pipeline
     from .vad import SAMPLE_RATE
 
@@ -55,7 +55,7 @@ def run_file(path: str, config) -> int:
     log.info("Loaded %s: %.1fs", path, len(audio) / SAMPLE_RATE)
 
     t0 = time.perf_counter()
-    asr = LocalASR(config.model, config.language)
+    asr = build_asr(config)
     log.info("Model loaded in %.1fs", time.perf_counter() - t0)
 
     result = Pipeline(config, asr).run(audio)

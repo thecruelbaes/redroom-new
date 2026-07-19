@@ -1,2 +1,8 @@
 faster-whisper>=1.1
 PyYAML>=6.0
+
+# live mode
+sounddevice>=0.4.6
+keyboard>=0.13.5
+pystray>=0.19.5
+pywin32>=306; sys_platform == 'win32'
