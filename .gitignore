@@ -13,3 +13,8 @@ next-env.d.ts
 # dev screenshot artifacts (Playwright)
 /shots/
 shots*.mjs
+
+# FastWhisper (Python)
+/.venv-fw/
+__pycache__/
+*.pyc

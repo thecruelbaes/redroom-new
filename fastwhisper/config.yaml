@@ -1,0 +1,34 @@
+# FastWhisper configuration. All keys are optional; defaults shown.
+
+model:
+  name: large-v3-turbo   # used on GPU
+  fallback: small        # used on CPU or if the primary model fails to load
+  device: auto           # auto | cuda | cpu
+  compute_type: int8
+
+# null = auto-detect (ru/en); set "ru" or "en" to force
+language: null
+
+hotkey: ctrl+space       # push-to-talk: hold to record, release to insert
+
+vad:
+  threshold: 0.5
+  min_speech_duration_ms: 250
+  min_silence_duration_ms: 300
+  speech_pad_ms: 100
+
+chunking:
+  max_chunk_s: 30.0      # longer recordings are split at VAD pauses
+
+insertion:
+  method: paste          # paste (clipboard + Ctrl+V) | type (direct typing)
+  restore_clipboard: true
+
+cloud:
+  enabled: false         # opt-in; default is fully local/offline
+  base_url: https://api.polza.ai/v1
+  api_key_env: POLZA_API_KEY   # name of the env var holding the API key
+  model: whisper-1
+  timeout_s: 30.0
+
+log_level: INFO
