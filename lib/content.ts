@@ -31,10 +31,13 @@ export type Service = {
   desc: string;
   image: string;
   icon: IconKey;
+  position?: 'top' | 'center';
 };
 
 // Главное направление — уроки. Репточка и звукозапись вынесены в WHAT_ELSE,
 // чтобы не размывать фокус с уроков барабанов/гитары.
+// position: 'top' — в широких карточках (2 в ряд) object-cover иначе
+// обрезает голову, если она близко к верхнему краю кадра.
 export const SERVICES: Service[] = [
   {
     id: 'drums',
@@ -42,6 +45,7 @@ export const SERVICES: Service[] = [
     desc: 'Акустическая установка и максимум практики — любимые треки вместо занудных упражнений. Играем с подзвучкой и ушным мониторингом, так чтобы был слышен каждый нюанс. А на отчётном концерте соберёшь первые овации.',
     image: '/images/service-drums.jpg',
     icon: 'drums',
+    position: 'top',
   },
   {
     id: 'guitar',
@@ -49,6 +53,7 @@ export const SERVICES: Service[] = [
     desc: 'Инструмент в руках с первого занятия. Программу строим на твоих любимых песнях — сразу играешь настоящую музыку, а не заучиваешь гаммы. Без сухой теории ради теории.',
     image: '/images/service-guitar.jpg',
     icon: 'guitar',
+    position: 'top',
   },
 ];
 
