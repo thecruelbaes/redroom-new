@@ -11,10 +11,10 @@ export default function Teachers() {
         <SectionHeading
           eyebrow="Преподаватели"
           title={<>Кто будет тебя учить</>}
-          sub="Действующие музыканты и звукорежиссёры — играют на сцене, пишутся в студии и умеют объяснять. Занятия на драйве, без теории ради теории."
+          sub="Действующие музыканты, с опытом выступлений, студийной работы и, конечно же, преподавания."
         />
 
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {TEACHERS.map((t, i) => (
             <Reveal key={t.id} delay={i * 80}>
               <article className="glow-card group relative h-full overflow-hidden rounded-2xl hairline bg-surface">

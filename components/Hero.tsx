@@ -54,9 +54,9 @@ export default function Hero() {
           </h1>
 
           <p className="mt-7 max-w-xl text-lg leading-relaxed text-muted">
-            Барабаны и гитара в <span className="text-ink">Новороссийске</span> — для взрослых и детей,
-            с любого уровня. Занимаемся один на один и сразу берём инструмент в руки: с первых занятий
-            разбираем <span className="text-ink">твои песни</span>, а не гоняем гаммы из учебника.
+            Барабаны и гитара в <span className="text-ink">Новороссийске</span> — для взрослых и детей
+            с 10 лет, с любого уровня. Занимаемся один на один и сразу берём инструмент в руки: с первых
+            занятий разбираем <span className="text-ink">твои песни</span>, а не гоняем гаммы из учебника.
           </p>
 
           {/* free-trial hook */}

@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { SERVICES } from '@/lib/content';
+import { SERVICES, WHAT_ELSE } from '@/lib/content';
 import { ICONS } from './Icons';
 import Reveal from './Reveal';
 import SectionHeading from './SectionHeading';
@@ -14,38 +14,29 @@ export default function Services() {
         <SectionHeading
           eyebrow="Направления"
           title={<>Чему мы учим</>}
-          sub="Главное — индивидуальные уроки барабанов и гитары. Плюс репетиционная точка и своя студия звукозаписи: всё в одном месте."
+          sub="Главное — индивидуальные уроки барабанов и гитары, с первого занятия и на твоих любимых песнях."
         />
 
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid gap-5 sm:grid-cols-2">
           {SERVICES.map((s, i) => {
             const Icon = ICONS[s.icon];
             return (
               <Reveal key={s.id} delay={i * 70}>
-                <article
-                  className={`glow-card group relative h-full overflow-hidden rounded-2xl ${
-                    s.flagship ? 'border border-red/40' : 'hairline'
-                  } bg-surface`}
-                >
-                  <div className="relative h-44 overflow-hidden">
+                <article className="glow-card group relative h-full overflow-hidden rounded-2xl border border-red/40 bg-surface">
+                  <div className="relative h-52 overflow-hidden">
                     <Image
                       src={s.image}
                       alt={s.title}
                       fill
                       className="object-cover opacity-70 transition-transform duration-500 group-hover:scale-105"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      sizes="(max-width: 640px) 100vw, 50vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-transparent" />
                     <span className="absolute left-4 top-4 flex h-11 w-11 items-center justify-center rounded-xl bg-obsidian/70 text-red backdrop-blur-sm">
                       <Icon className="h-6 w-6" />
                     </span>
-                    {s.flagship && (
-                      <span className="absolute right-4 top-4 rounded-full bg-red px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-white">
-                        Флагман
-                      </span>
-                    )}
                   </div>
-                  <div className="p-5">
+                  <div className="p-6">
                     <h3 className="font-display text-xl font-semibold text-ink">{s.title}</h3>
                     <p className="mt-2 text-sm leading-relaxed text-muted">{s.desc}</p>
                   </div>
@@ -53,6 +44,31 @@ export default function Services() {
               </Reveal>
             );
           })}
+        </div>
+
+        {/* Что ещё в студии — репточка и звукозапись, лёгким блоком под уроками, чтобы не спорить с ними за фокус */}
+        <div className="mt-16">
+          <h3 className="font-display text-sm font-semibold uppercase tracking-mega text-muted">
+            Что ещё в студии
+          </h3>
+          <div className="mt-5 grid gap-4 sm:grid-cols-2">
+            {WHAT_ELSE.map((s, i) => {
+              const Icon = ICONS[s.icon];
+              return (
+                <Reveal key={s.id} delay={i * 70}>
+                  <article className="flex gap-4 rounded-2xl hairline bg-surface/60 p-5">
+                    <span className="flex h-11 w-11 flex-none items-center justify-center rounded-xl bg-red/10 text-red">
+                      <Icon className="h-5 w-5" />
+                    </span>
+                    <div>
+                      <h4 className="font-display text-base font-semibold text-ink">{s.title}</h4>
+                      <p className="mt-1 text-sm leading-relaxed text-muted">{s.desc}</p>
+                    </div>
+                  </article>
+                </Reveal>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

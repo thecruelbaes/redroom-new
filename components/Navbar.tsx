@@ -5,7 +5,7 @@ import Logo from './Logo';
 
 const LINKS = [
   { href: '#services', label: 'Уроки' },
-  { href: '#how', label: 'Как начать' },
+  { href: '#how', label: 'Обучение' },
   { href: '#teachers', label: 'Преподаватели' },
   { href: '#studio', label: 'Студия' },
   { href: '#faq', label: 'Вопросы' },

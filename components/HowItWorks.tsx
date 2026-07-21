@@ -9,12 +9,12 @@ export default function HowItWorks() {
       <div className="absolute inset-0 bg-red-glow opacity-40" />
       <div className="relative mx-auto max-w-7xl px-5 md:px-8">
         <SectionHeading
-          eyebrow="Как начать"
-          title={<>Три шага до первого урока</>}
-          sub="Всё просто: оставляешь заявку, приходишь на бесплатное занятие, начинаешь играть. Дальше — дело техники."
+          eyebrow="Обучение"
+          title={<>Этапы нашего обучения</>}
+          sub="Путь от знакомства со студией до первого выступления на сцене."
         />
 
-        <div className="mt-14 grid gap-5 md:grid-cols-3">
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {HOW_IT_WORKS.map((s, i) => (
             <Reveal key={s.step} delay={i * 80}>
               <div className="glow-card relative h-full rounded-2xl hairline bg-surface p-7">
@@ -24,7 +24,7 @@ export default function HowItWorks() {
                 <h3 className="mt-4 font-display text-xl font-semibold text-ink">{s.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted">{s.desc}</p>
                 {i < HOW_IT_WORKS.length - 1 && (
-                  <span className="pointer-events-none absolute -right-3 top-1/2 hidden -translate-y-1/2 text-red/40 md:block">
+                  <span className="pointer-events-none absolute -right-3 top-1/2 hidden -translate-y-1/2 text-red/40 lg:block">
                     <ArrowRight className="h-6 w-6" />
                   </span>
                 )}
