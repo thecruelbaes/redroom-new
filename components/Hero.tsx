@@ -55,8 +55,8 @@ export default function Hero() {
 
           <p className="mt-7 max-w-xl text-lg leading-relaxed text-muted">
             Барабаны и гитара в <span className="text-ink">Новороссийске</span> — для взрослых и детей
-            с 10 лет, с любого уровня. Занимаемся один на один и сразу берём инструмент в руки: с первых
-            занятий разбираем <span className="text-ink">твои песни</span>, а не гоняем гаммы из учебника.
+            с 10 лет. Для новичков и уже с опытом игры. <span className="text-ink">Лучшие преподаватели</span>,
+            играем с первого урока — вдохновение и комфорт.
           </p>
 
           {/* free-trial hook */}
