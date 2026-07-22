@@ -28,6 +28,9 @@ export default function Why() {
           <div className="mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-2xl hairline bg-white/8 md:grid-cols-4">
             {STATS.map((s) => (
               <div key={s.label} className="bg-surface px-6 py-8 text-center">
+                {s.prefix && (
+                  <div className="text-xs uppercase tracking-wide2 text-muted">{s.prefix}</div>
+                )}
                 <div className="font-display text-4xl font-bold text-flame md:text-5xl">{s.value}</div>
                 <div className="mt-2 text-xs uppercase tracking-wide2 text-muted">{s.label}</div>
               </div>
