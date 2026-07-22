@@ -39,6 +39,8 @@ export default function ContactForm() {
       // никуда реально не улетела — не показываем ложный успех.
       if (!res.ok || json?.warning) throw new Error(json?.error || 'fail');
       setStatus('ok');
+      // Цель для Яндекс.Директа/Метрики — по этому же событию строятся автостратегии.
+      window.ym?.(Number(SITE.yandexMetrikaId), 'reachGoal', 'lead_submit');
       form.reset();
       setConsent(false);
     } catch {
