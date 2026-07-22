@@ -121,7 +121,7 @@ export const HOW_IT_WORKS: { step: string; title: string; desc: string }[] = [
 // Цифры для блока статистики (со старого сайта nvrskmusic.ru).
 export const STATS: { value: string; label: string }[] = [
   { value: '200+', label: 'учеников' },
-  { value: '2014', label: 'работаем с 2014 года' },
+  { value: 'Работаем с 2014', label: 'года' },
   { value: '12', label: 'занятий до результата' },
   { value: '∞', label: 'драйва' },
 ];
