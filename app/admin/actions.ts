@@ -15,7 +15,9 @@ const LOGIN_MAX = 8;
 
 async function loginThrottled(): Promise<boolean> {
   const h = await headers();
-  const ip = h.get('x-forwarded-for')?.split(',')[0]?.trim() || h.get('x-real-ip') || 'unknown';
+  // x-real-ip выставляется nginx'ом напрямую из $remote_addr и клиент подделать не может —
+  // приоритет ему. x-forwarded-for оставлен только как fallback (например, на Vercel).
+  const ip = h.get('x-real-ip') || h.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown';
   const now = Date.now();
   if (loginAttempts.size > 2000) {
     for (const [k, v] of loginAttempts) if (now - v.ts > LOGIN_WINDOW) loginAttempts.delete(k);

@@ -27,9 +27,11 @@ function clean(v: unknown, max = 600): string {
 }
 
 export async function POST(req: NextRequest) {
+  // x-real-ip выставляется nginx'ом напрямую из $remote_addr и клиент подделать не может —
+  // приоритет ему. x-forwarded-for оставлен только как fallback (например, на Vercel).
   const ip =
-    req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
     req.headers.get('x-real-ip') ||
+    req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
     'unknown';
 
   if (rateLimited(ip)) {

@@ -34,7 +34,10 @@ export default function ContactForm() {
           comment: data.comment,
         }),
       });
-      if (!res.ok) throw new Error((await res.json().catch(() => ({})))?.error || 'fail');
+      const json = await res.json().catch(() => ({}));
+      // warning (например, telegram_not_configured) значит, что HTTP 200, но заявка
+      // никуда реально не улетела — не показываем ложный успех.
+      if (!res.ok || json?.warning) throw new Error(json?.error || 'fail');
       setStatus('ok');
       form.reset();
       setConsent(false);
