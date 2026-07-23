@@ -87,7 +87,7 @@ const jsonLd = {
   },
   geo: { '@type': 'GeoCoordinates', latitude: 44.713951, longitude: 37.77526 },
   areaServed: { '@type': 'City', name: 'Новороссийск' },
-  sameAs: [SITE.telegramChannel],
+  sameAs: [SITE.telegramChannel, SITE.vk],
   description: SITE.description,
   makesOffer: SERVICES.map((s) => ({
     '@type': 'Offer',
