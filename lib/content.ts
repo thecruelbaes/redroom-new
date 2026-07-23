@@ -23,10 +23,13 @@ export const SITE = {
   // Telegram — вторичный канал: следить за студией + будущий бот записи (YClients).
   telegramChannel: 'https://t.me/redroomstudio',
   telegramChannelHandle: '@redroomstudio',
-  // ВК-сообщество — со старого сайта (был в og:url Tilda-версии). Идёт в schema sameAs,
-  // чтобы связать сайт с проверенными профилями студии (где живут отзывы/рейтинг).
-  // TODO: добавить сюда точные URL карточек Яндекс.Карт и 2ГИС, когда владелец пришлёт.
+  // Проверенные профили студии — идут в schema sameAs, чтобы связать сайт с карточками,
+  // где живут отзывы/рейтинг (Яндекс.Карты подтверждены: RedRoomStudio, Новороссийск,
+  // муз.школа+звукозапись, 5.0 из 80 отзывов). Яндекс — канонический .ru (редирект на .eu/.com
+  // зависит от гео пользователя).
   vk: 'https://vk.com/red__room__studio',
+  yandexMaps: 'https://yandex.ru/maps/org/red_room_studio/174654563281/',
+  gis2: 'https://2gis.ru/novorossiysk/firm/70000001046309020',
   address: 'Новороссийск, ул. Энгельса, 47 / Революции, 16',
   email: 'redroomstuuudio@gmail.com',
   mapUrl: 'https://yandex.ru/maps/?pt=37.77526,44.713951&z=17',
