@@ -1,0 +1,21 @@
+# Один сервис = один compose-файл в своей папке, все — на общей внешней сети redroom-net.
+# Так апдейт/рестарт сайта никогда не трогает CRM или бота, когда они появятся —
+# у каждого свой независимый жизненный цикл (docker compose up/down только внутри своей папки).
+#
+# Порт 3000 забронирован за сайтом. Следующие сервисы — 3001 (CRM), 3002 (бот) — см. deploy/DEPLOY.md.
+# 127.0.0.1: наружу торчит только nginx, сами контейнеры с хоста видны только локально.
+
+services:
+  redroom-site:
+    build: .
+    container_name: redroom-site
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "127.0.0.1:3000:3000"
+    networks:
+      - redroom-net
+
+networks:
+  redroom-net:
+    external: true
