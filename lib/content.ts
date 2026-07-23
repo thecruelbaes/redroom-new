@@ -41,7 +41,10 @@ export type Service = {
   desc: string;
   image: string;
   icon: IconKey;
-  position?: 'top' | 'center';
+  // 'top' — прижать кадр к верху (когда важна голова). Либо произвольное значение
+  // CSS object-position (например '50% 40%'), если важен объект НИЖЕ в кадре —
+  // как гитара на service-guitar.jpg, которую 'top' срезал целиком.
+  position?: 'top' | 'center' | string;
 };
 
 // Главное направление — уроки. Репточка и звукозапись вынесены в WHAT_ELSE,
@@ -63,7 +66,8 @@ export const SERVICES: Service[] = [
     desc: 'Инструмент в руках с первого занятия. Программу строим на твоих любимых песнях — сразу играешь настоящую музыку, а не заучиваешь гаммы. Без сухой теории ради теории.',
     image: '/images/service-guitar.jpg',
     icon: 'guitar',
-    position: 'top',
+    // 'top' срезал саму гитару (она в нижней половине кадра) — сдвинул фокус ниже.
+    position: '50% 62%',
   },
 ];
 

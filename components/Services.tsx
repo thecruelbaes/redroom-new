@@ -28,9 +28,8 @@ export default function Services() {
                       src={s.image}
                       alt={s.title}
                       fill
-                      className={`object-cover opacity-70 transition-transform duration-500 group-hover:scale-105 ${
-                        s.position === 'top' ? 'object-top' : 'object-center'
-                      }`}
+                      className="object-cover opacity-70 transition-transform duration-500 group-hover:scale-105"
+                      style={{ objectPosition: s.position === 'top' ? 'top' : s.position || 'center' }}
                       sizes="(max-width: 640px) 100vw, 50vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-transparent" />
