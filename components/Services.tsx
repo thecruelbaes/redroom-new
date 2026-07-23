@@ -23,7 +23,7 @@ export default function Services() {
             return (
               <Reveal key={s.id} delay={i * 70}>
                 <article className="glow-card group relative h-full overflow-hidden rounded-2xl border border-red/40 bg-surface">
-                  <div className="relative h-52 overflow-hidden">
+                  <div className="relative h-72 overflow-hidden">
                     <Image
                       src={s.image}
                       alt={s.title}

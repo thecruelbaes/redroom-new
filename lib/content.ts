@@ -67,7 +67,7 @@ export const SERVICES: Service[] = [
     image: '/images/service-guitar.jpg',
     icon: 'guitar',
     // Новое фото портретное (в полный рост) — подбираю позицию заново.
-    position: '50% 45%',
+    position: '50% 32%',
   },
 ];
 
