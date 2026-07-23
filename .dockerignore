@@ -5,7 +5,10 @@ build
 shots
 shots-review
 *.tsbuildinfo
-.env
+# .env НЕ игнорируем — Next.js читает NEXT_PUBLIC_* переменные (Supabase URL/ключ,
+# сайт-URL, верификация Яндекса) на этапе `npm run build` внутри builder-стадии,
+# а не в рантайме. Итоговый runner-образ .env всё равно не копирует (см. Dockerfile) —
+# наружу секрет не утекает, только временно живёт в промежуточном build-слое на сервере.
 .env.local
 .git
 .gitignore
