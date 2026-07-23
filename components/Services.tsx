@@ -28,11 +28,11 @@ export default function Services() {
                       src={s.image}
                       alt={s.title}
                       fill
-                      className="object-cover opacity-70 transition-transform duration-500 group-hover:scale-105"
+                      className="object-cover opacity-80 transition-transform duration-500 group-hover:scale-105"
                       style={{ objectPosition: s.position === 'top' ? 'top' : s.position || 'center' }}
                       sizes="(max-width: 640px) 100vw, 50vw"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-surface/70 via-surface/5 to-transparent" />
                     <span className="absolute left-4 top-4 flex h-11 w-11 items-center justify-center rounded-xl bg-obsidian/70 text-red backdrop-blur-sm">
                       <Icon className="h-6 w-6" />
                     </span>
