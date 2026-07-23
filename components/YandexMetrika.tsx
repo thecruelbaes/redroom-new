@@ -9,9 +9,10 @@ declare global {
   }
 }
 
-// Официальный сниппет Яндекс.Метрики (счётчик перенесён со старого сайта nvrskmusic.ru,
-// та же история не теряется — id совпадает). strategy="afterInteractive" — не блокирует
-// первый рендер, но грузится вскоре после гидратации.
+// Официальный сниппет из кабинета Метрики (счётчик перенесён со старого сайта
+// nvrskmusic.ru, та же история не теряется — id совпадает). ssr:true + явные
+// referrer/url — конфигурация именно под SSR-фреймворки вроде Next.js, не дефолтная.
+// strategy="afterInteractive" — не блокирует первый рендер, грузится после гидратации.
 export default function YandexMetrika() {
   return (
     <>
@@ -24,12 +25,17 @@ export default function YandexMetrika() {
               if (document.scripts[j].src === r) { return; }
             }
             k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-          })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+          })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js?id=${SITE.yandexMetrikaId}", "ym");
 
           ym(${SITE.yandexMetrikaId}, "init", {
+            ssr: true,
+            webvisor: true,
             clickmap: true,
-            trackLinks: true,
-            accurateTrackBounce: true
+            ecommerce: "dataLayer",
+            referrer: document.referrer,
+            url: location.href,
+            accurateTrackBounce: true,
+            trackLinks: true
           });
         `}
       </Script>
