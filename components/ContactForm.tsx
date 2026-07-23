@@ -176,7 +176,7 @@ export default function ContactForm() {
                   id="comment"
                   name="comment"
                   rows={3}
-                  placeholder="Уровень, пожелания, удобное время"
+                  placeholder="Возраст, уровень, пожелания, удобное время"
                   className={`${inputCls} resize-none`}
                 />
               </Field>
