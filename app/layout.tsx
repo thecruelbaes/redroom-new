@@ -87,6 +87,21 @@ const jsonLd = {
   },
   geo: { '@type': 'GeoCoordinates', latitude: 44.713951, longitude: 37.77526 },
   areaServed: { '@type': 'City', name: 'Новороссийск' },
+  // Работают все 7 дней 9:00–20:00, по записи (подтверждено владельцем).
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: [
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday',
+      'Sunday',
+    ],
+    opens: '09:00',
+    closes: '20:00',
+  },
   sameAs: [SITE.telegramChannel, SITE.vk, SITE.yandexMaps, SITE.gis2],
   description: SITE.description,
   makesOffer: SERVICES.map((s) => ({
