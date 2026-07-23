@@ -27,6 +27,10 @@ export const SITE = {
   mapUrl: 'https://yandex.ru/maps/?pt=37.77526,44.713951&z=17',
   workHours: 'С 9:00 до 20:00, по записи',
   legalEntity: 'ИП Шубный Сергей Александрович',
+  // Реквизиты — из договора оказания услуг (ДОГОВОР ОКАЗАНИЯ УСЛУГ 2026.docx).
+  inn: '231516910761',
+  ogrnip: '320237500176675',
+  legalAddress: '353922, Краснодарский край, г. Новороссийск, ул. Героев Десантников, д. 81, кв. 30',
 };
 
 export type IconKey = 'drums' | 'guitar' | 'rehearsal' | 'record';

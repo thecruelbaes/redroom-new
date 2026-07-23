@@ -19,7 +19,8 @@ export default function PrivacyPage() {
         Политика обработки персональных данных
       </h1>
       <p className="mt-3 text-sm text-faint">
-        Действует для сайта {SITE.name}. Оператор: {SITE.legalEntity}, г. Новороссийск.
+        Действует для сайта {SITE.name}. Оператор: {SITE.legalEntity} (ИНН {SITE.inn}, ОГРНИП{' '}
+        {SITE.ogrnip}), г. Новороссийск.
       </p>
 
       <div className="mt-10 space-y-8 text-sm leading-relaxed text-muted">
@@ -29,7 +30,14 @@ export default function PrivacyPage() {
             Настоящая Политика определяет порядок обработки персональных данных и меры по обеспечению
             их безопасности в соответствии с Федеральным законом РФ от 27.07.2006 № 152-ФЗ «О
             персональных данных». Оставляя заявку на сайте, пользователь подтверждает согласие с
-            условиями данной Политики. Оператор персональных данных — {SITE.legalEntity}.
+            условиями данной Политики. Оператор персональных данных — {SITE.legalEntity} (ИНН{' '}
+            {SITE.inn}, ОГРНИП {SITE.ogrnip}).
+          </p>
+          <p className="mt-3">
+            Под обработкой персональных данных понимаются любые действия, предусмотренные 152-ФЗ:
+            сбор, запись, систематизация, накопление, хранение, уточнение, использование, передача в
+            случаях, предусмотренных законодательством РФ, обезличивание, блокирование, удаление и
+            уничтожение персональных данных.
           </p>
         </section>
 
@@ -87,15 +95,15 @@ export default function PrivacyPage() {
         <section>
           <h2 className="mb-2 font-display text-lg font-semibold text-ink">7. Контакты</h2>
           <p>
-            По вопросам обработки персональных данных: {SITE.legalEntity}, {SITE.phones[0].display},
-            г. Новороссийск.
+            По вопросам обработки персональных данных: {SITE.legalEntity}, ИНН {SITE.inn}, ОГРНИП{' '}
+            {SITE.ogrnip}. Юридический адрес: {SITE.legalAddress}. Телефон:{' '}
+            {SITE.phones[0].display}, e-mail:{' '}
+            <a href={`mailto:${SITE.email}`} className="text-ink hover:underline">
+              {SITE.email}
+            </a>
+            .
           </p>
         </section>
-
-        <p className="border-t border-white/8 pt-6 text-xs text-faint">
-          ⚠️ Шаблон. Перед публикацией дополните реквизитами ИП (ИНН, ОГРНИП, e-mail, юр. адрес) и при
-          необходимости согласуйте с юристом.
-        </p>
       </div>
     </main>
   );
