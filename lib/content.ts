@@ -197,7 +197,7 @@ export const TEACHERS: Teacher[] = [
 // position: 'top' — для кадров, где голова человека близко к верхней границе
 // (в широких col-span-2 ячейках object-cover иначе обрезает её при центрировании).
 export const GALLERY: { src: string; alt: string; position?: 'top' | 'center' }[] = [
-  { src: '/images/gallery/g1.jpg', alt: 'Ученик за барабанной установкой в студии RedRoom', position: 'top' },
+  { src: '/images/gallery/23.jpg', alt: 'Ученица за барабанной установкой в студии RedRoom', position: 'top' },
   { src: '/images/gallery/g3.jpg', alt: 'Занятие на электрогитаре в студии RedRoom' },
   { src: '/images/gallery/g5.jpg', alt: 'Репетиционная точка с барабанами и гитарой' },
   { src: '/images/gallery/g6.jpg', alt: 'Уголок звукозаписи в студии RedRoom' },
