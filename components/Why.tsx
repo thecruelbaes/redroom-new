@@ -9,7 +9,7 @@ export default function Why() {
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <SectionHeading eyebrow="Почему RedRoom" title={<>Здесь начинают играть</>} />
 
-        <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
           {ADVANTAGES.map((a, i) => (
             <Reveal key={a.title} delay={i * 70}>
               <div className="glow-card h-full rounded-2xl hairline bg-surface p-6">
