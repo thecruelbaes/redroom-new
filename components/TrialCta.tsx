@@ -10,14 +10,14 @@ export default function TrialCta() {
       <div className="relative mx-auto max-w-3xl px-5 text-center md:px-8">
         <Reveal>
           <p className="font-display text-sm font-semibold uppercase tracking-mega text-muted">
-            Попробуй бесплатно
+            Попробуйте бесплатно
           </p>
           <h2 className="mt-6 font-display text-4xl font-bold leading-[1.02] md:text-6xl">
             Первое занятие — <span className="text-flame">бесплатно</span>
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted">
-            Оставь заявку и приходи на пробный по барабанам или гитаре. Возьмёшь инструмент, познакомишься
-            с преподавателем, попробуешь — и решишь. Без оплаты и обязательств.
+            Оставьте заявку и приходите на пробный по барабанам или гитаре. Возьмёте инструмент, познакомитесь
+            с преподавателем, попробуете — и решите. Без оплаты и обязательств.
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a

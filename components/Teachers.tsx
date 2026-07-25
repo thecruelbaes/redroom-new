@@ -10,7 +10,7 @@ export default function Teachers() {
       <div className="relative mx-auto max-w-7xl px-5 md:px-8">
         <SectionHeading
           eyebrow="Преподаватели"
-          title={<>Кто будет тебя учить</>}
+          title={<>Кто будет вас учить</>}
           sub="Действующие музыканты, с опытом выступлений, студийной работы и, конечно же, преподавания."
         />
 

@@ -62,14 +62,14 @@ export default function ContactForm() {
             </span>
           </div>
           <h2 className="font-display text-4xl font-bold leading-[1.02] md:text-5xl">
-            Запишись на <span className="text-flame">бесплатное</span> занятие
+            Запишитесь на <span className="text-flame">бесплатное</span> занятие
           </h2>
           <p className="mt-5 max-w-md text-base leading-relaxed text-muted">
-            Оставь номер — перезвоним, расскажем про программу и цены, подберём преподавателя и удобное
+            Оставьте номер — перезвоним, расскажем про программу и цены, подберём преподавателя и удобное
             время. Первое занятие бесплатно и ни к чему не обязывает.
           </p>
           <p className="mt-3 max-w-md text-sm italic leading-relaxed text-faint">
-            Не стесняйся: даже самые крутые барабанщики когда-то не знали, как держать палочки.
+            Не стесняйтесь: даже самые крутые барабанщики когда-то не знали, как держать палочки.
           </p>
 
           <div className="mt-9 space-y-4">
@@ -124,7 +124,7 @@ export default function ContactForm() {
               </span>
               <h3 className="font-display text-2xl font-bold text-ink">Заявка принята</h3>
               <p className="mt-3 max-w-xs text-sm text-muted">
-                Свяжемся с тобой в ближайшее время. До встречи в RedRoom!
+                Свяжемся с вами в ближайшее время. До встречи в RedRoom!
               </p>
               <button
                 onClick={() => setStatus('idle')}
@@ -138,7 +138,7 @@ export default function ContactForm() {
               {/* honeypot */}
               <input type="text" name="company" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden />
 
-              <Field label="Как тебя зовут" htmlFor="name">
+              <Field label="Как вас зовут" htmlFor="name">
                 <input id="name" name="name" required autoComplete="name" placeholder="Имя" className={inputCls} />
               </Field>
 
@@ -158,7 +158,7 @@ export default function ContactForm() {
               <Field label="Направление" htmlFor="service">
                 <select id="service" name="service" defaultValue="" className={`${inputCls} appearance-none`}>
                   <option value="" disabled>
-                    Выбери направление
+                    Выберите направление
                   </option>
                   {SERVICES.map((s) => (
                     <option key={s.id} value={s.title} className="bg-obsidian">
