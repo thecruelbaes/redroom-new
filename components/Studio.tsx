@@ -25,9 +25,8 @@ export default function Studio() {
                   src={g.src}
                   alt={g.alt}
                   fill
-                  className={`object-cover transition-transform duration-500 group-hover:scale-105 ${
-                    g.position === 'top' ? 'object-top' : 'object-center'
-                  }`}
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  style={{ objectPosition: g.position === 'top' ? 'top' : g.position || 'center' }}
                   sizes="(max-width: 768px) 50vw, 25vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-obsidian/60 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />

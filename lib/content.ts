@@ -194,13 +194,14 @@ export const TEACHERS: Teacher[] = [
 ];
 
 // Галерея студии и атмосферы.
-// position: 'top' — для кадров, где голова человека близко к верхней границе
-// (в широких col-span-2 ячейках object-cover иначе обрезает её при центрировании).
-export const GALLERY: { src: string; alt: string; position?: 'top' | 'center' }[] = [
+// position: 'top' — прижать к верху (когда важна голова). Либо произвольный CSS
+// object-position (например '50% 40%'), если нужен промежуточный кроп между top и center
+// (в широких col-span-2 ячейках object-cover иначе обрезает лицо или инструмент).
+export const GALLERY: { src: string; alt: string; position?: 'top' | 'center' | string }[] = [
   { src: '/images/gallery/luka.jpg', alt: 'Ученик за барабанной установкой в студии RedRoom', position: 'top' },
   { src: '/images/gallery/g3.jpg', alt: 'Занятие на электрогитаре в студии RedRoom' },
-  { src: '/images/gallery/g5.jpg', alt: 'Репетиционная точка с барабанами и гитарой' },
-  { src: '/images/gallery/g6.jpg', alt: 'Уголок звукозаписи в студии RedRoom' },
+  { src: '/images/gallery/danyaG.jpg', alt: 'Занятие на электрогитаре на сцене в студии RedRoom' },
+  { src: '/images/gallery/barabani2.jpg', alt: 'Барабанщик на сцене в студии RedRoom', position: '50% 35%' },
   { src: '/images/gallery/g2.jpg', alt: 'Игра на барабанах в студии RedRoom' },
   { src: '/images/gallery/g4.jpg', alt: 'Гитара крупным планом на занятии', position: 'top' },
 ];
