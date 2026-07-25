@@ -13,8 +13,8 @@ export default function Services() {
       <div className="relative mx-auto max-w-7xl px-5 md:px-8">
         <SectionHeading
           eyebrow="Направления"
-          title={<>Чему мы учим</>}
-          sub="Главное — индивидуальные уроки барабанов и гитары, с первого занятия и на ваших любимых песнях."
+          title={<>Обучение</>}
+          sub="Главное — индивидуальные уроки по игре на барабанах и гитаре."
         />
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2">
@@ -50,7 +50,7 @@ export default function Services() {
         {/* Что ещё в студии — репточка и звукозапись, лёгким блоком под уроками, чтобы не спорить с ними за фокус */}
         <div className="mt-16">
           <h3 className="font-display text-sm font-semibold uppercase tracking-mega text-muted">
-            Что ещё в студии
+            А также
           </h3>
           <div className="mt-5 grid gap-4 sm:grid-cols-2">
             {WHAT_ELSE.map((s, i) => {
