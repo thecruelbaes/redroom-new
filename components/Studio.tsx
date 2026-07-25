@@ -9,7 +9,7 @@ export default function Studio() {
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <SectionHeading
           eyebrow="Студия"
-          title={<>Наша студия</>}
+          title={<>Быть с нами</>}
           sub="Класс для уроков, репетиционная точка и уголок звукозаписи — всё под одной крышей. Живые инструменты и пространство, где хочется быть с нами."
         />
 
