@@ -203,8 +203,8 @@ export const TEACHERS: Teacher[] = [
 export const GALLERY: { src: string; alt: string; position?: 'top' | 'center' | string }[] = [
   { src: '/images/gallery/luka.jpg', alt: 'Ученик за барабанной установкой в студии RedRoom', position: 'top' },
   { src: '/images/gallery/g3.jpg', alt: 'Занятие на электрогитаре в студии RedRoom' },
-  { src: '/images/gallery/danyaG.jpg', alt: 'Занятие на электрогитаре на сцене в студии RedRoom' },
-  { src: '/images/gallery/barabani2.jpg', alt: 'Барабанщик на сцене в студии RedRoom', position: '50% 35%' },
+  { src: '/images/gallery/danyaG.jpg', alt: 'Занятие на электрогитаре на сцене в студии RedRoom', position: '60% center' },
+  { src: '/images/gallery/barabani2.jpg', alt: 'Барабанщик на сцене в студии RedRoom', position: '50% 20%' },
   { src: '/images/gallery/g2.jpg', alt: 'Игра на барабанах в студии RedRoom' },
   { src: '/images/gallery/g4.jpg', alt: 'Гитара крупным планом на занятии', position: 'top' },
 ];
@@ -247,7 +247,7 @@ export const FAQ: { q: string; a: string }[] = [
   },
   {
     q: 'С какого возраста берёте детей?',
-    a: 'С 10 лет — без отбора и кастинга. Записывайтесь на бесплатное занятие и в тот же день начинаете играть.',
+    a: 'С 10 лет. Приходите на бесплатное пробное занятие — попробуете инструмент и сами решите, ваше это или нет.',
   },
   {
     q: 'За сколько я смогу играть любимые песни?',
