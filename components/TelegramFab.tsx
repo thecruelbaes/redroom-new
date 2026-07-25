@@ -4,7 +4,9 @@ import { useEffect, useState } from 'react';
 import { SITE } from '@/lib/content';
 
 // Плавающий кружок Telegram: появляется при скролле, деликатно «показывает себя».
-// Основная конверсия — форма/телефон; это вторичный канал, растим актив в канале.
+// Основная конверсия — форма/телефон; это вторичный канал быстрой связи — ведёт
+// в личный профиль студии (не в канал, см. SITE.telegramProfile), чтобы человек
+// сразу мог написать, а не просто подписаться.
 export default function TelegramFab() {
   const [show, setShow] = useState(false);
 
@@ -32,11 +34,11 @@ export default function TelegramFab() {
 
   return (
     <a
-      href={SITE.telegramChannel}
+      href={SITE.telegramProfile}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Наш Telegram-канал"
-      title="Наш Telegram-канал"
+      aria-label="Написать нам в Telegram"
+      title="Написать нам в Telegram"
       className={`tg-fab fixed right-5 bottom-24 z-40 flex h-14 w-14 items-center justify-center rounded-full text-white transition-all duration-300 cursor-pointer md:bottom-6 ${
         show
           ? 'pointer-events-auto translate-y-0 scale-100 opacity-100'
