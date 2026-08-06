@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Фикстура: корректно оформленный сайт</title>
+  <script async src="https://mc.yandex.ru/metrika/tag.js"></script>
+</head>
+<body>
+  <h1>Школа музыки «Пример»</h1>
+
+  <form id="lead">
+    <input type="text" name="name" placeholder="Как вас зовут">
+    <input type="tel" name="phone" placeholder="Телефон">
+    <label>
+      <input type="checkbox" id="consent" name="consent" required>
+      <span>Я согласен на обработку <a href="/good/privacy.html">персональных данных</a>
+      в соответствии с 152-ФЗ</span>
+    </label>
+    <button type="submit">Отправить заявку</button>
+  </form>
+
+  <div id="cookie-banner">
+    <span>Мы используем файлы cookie. Подробнее — в
+      <a href="/good/privacy.html">политике обработки данных</a>.</span>
+    <button type="button">Принять</button>
+  </div>
+
+  <footer>
+    <a href="/good/privacy.html">Политика обработки персональных данных</a>
+    <p>ИП Пример Пример Примерович, ИНН 231000000000</p>
+  </footer>
+
+  <script>
+    // Отправка через fetch — атрибута action нет. Это нормальный современный
+    // сайт, и сканер обязан вернуть по FRM-07 «неизвестно», а не обвинение.
+    document.getElementById('lead').addEventListener('submit', (e) => {
+      e.preventDefault();
+      fetch('/api/lead', { method: 'POST' });
+    });
+  </script>
+</body>
+</html>

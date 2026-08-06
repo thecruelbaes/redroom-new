@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Фикстура: предотметка скриптом и форма-виджет без тега form</title>
+</head>
+<body>
+  <h1>Клиника «Пример»</h1>
+
+  <!-- Ключевой регрессионный случай.
+       В разметке чекбокс НЕ отмечен: атрибута checked нет. Отметку ставит
+       скрипт при загрузке — ровно так ведёт себя контролируемый компонент
+       React с начальным состоянием true.
+       Проверка через defaultChecked, как предлагала спецификация, здесь
+       промолчала бы: defaultChecked отражает атрибут, а атрибута нет.
+       Ожидаемый результат: FRM-03 — FAIL. -->
+  <form action="/submit">
+    <input type="text" name="fio" placeholder="ФИО">
+    <input type="tel" name="phone" placeholder="Телефон">
+    <label>
+      <input type="checkbox" id="consent">
+      <span>Я даю согласие на обработку персональных данных</span>
+    </label>
+    <button type="submit">Записаться</button>
+  </form>
+
+  <!-- Второй случай: форма-виджет без тега form, поля и кнопка в общем контейнере.
+       Ожидаемый результат: FRM-01 находит её, FRM-02 — FAIL, чекбокса нет. -->
+  <div class="widget">
+    <div>
+      <input type="text" name="clientName" placeholder="Имя">
+      <input type="text" name="userPhone" placeholder="Телефон">
+      <div role="button">Заказать звонок</div>
+    </div>
+  </div>
+
+  <footer>
+    <a href="/tricky/policy.html">Политика конфиденциальности</a>
+  </footer>
+
+  <script>
+    // Отметка выставляется скриптом — в разметке её не видно.
+    document.getElementById('consent').checked = true;
+  </script>
+</body>
+</html>

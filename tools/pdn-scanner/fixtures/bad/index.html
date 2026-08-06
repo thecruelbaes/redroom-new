@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Фикстура: сайт без документов и согласия</title>
+  <!-- Иностранный счётчик. Запрос уйдёт даже если сеть его не пропустит —
+       событие request фиксируется на попытке, этого достаточно для CK-04. -->
+  <script async src="https://www.google-analytics.com/analytics.js"></script>
+  <script async src="https://connect.facebook.net/en_US/fbevents.js"></script>
+</head>
+<body>
+  <h1>Стоматология «Пример»</h1>
+  <p>Записаться на приём</p>
+
+  <!-- Форма собирает ПДн, чекбокса согласия нет вообще, action на зарубежный приёмник. -->
+  <form action="https://formspree.io/f/abcdefgh" method="post">
+    <input type="text" name="name" placeholder="Ваше имя">
+    <input type="tel" name="phone" placeholder="Телефон">
+    <input type="email" name="email" placeholder="Почта">
+    <textarea name="comment" placeholder="Комментарий"></textarea>
+    <button type="submit">Отправить заявку</button>
+  </form>
+
+  <footer>
+    <p>Телефон: +7 000 000-00-00</p>
+    <!-- Ни ссылки на политику, ни реквизитов. -->
+  </footer>
+</body>
+</html>
