@@ -41,7 +41,7 @@
   --deep:#151E22;
   --ink:#101A1E;
   --ink-2:#56656B;
-  --ink-3:#84969B;
+  --ink-3:#5A6B71;
   --brass:#8E6323;
   --brass-lift:#B98A48;
   --line:#D3DADB;
@@ -69,7 +69,7 @@
     --deep:#080D0F;
     --ink:#E3EAEB;
     --ink-2:#9BAAAF;
-    --ink-3:#6D7F85;
+    --ink-3:#7C8E94;
     --brass:#CE9B57;
     --brass-lift:#E0B473;
     --line:#243035;
@@ -82,7 +82,7 @@
   --deep:#080D0F;
   --ink:#E3EAEB;
   --ink-2:#9BAAAF;
-  --ink-3:#6D7F85;
+  --ink-3:#7C8E94;
   --brass:#CE9B57;
   --brass-lift:#E0B473;
   --line:#243035;
@@ -130,15 +130,17 @@ section{padding-block:clamp(3.5rem,8vw,6.5rem)}
 .seg{display:flex;border:1px solid var(--line);border-radius:999px;padding:2px;background:var(--surface)}
 .seg button{
   font:inherit;font-size:var(--step--1);font-weight:500;color:var(--ink-2);
-  background:none;border:0;border-radius:999px;padding:.4rem .85rem;cursor:pointer;
-  white-space:nowrap;transition:color .18s,background .18s;
+  background:none;border:0;border-radius:999px;padding:.4rem 1rem;cursor:pointer;
+  min-height:44px;white-space:nowrap;transition:color .18s,background .18s;
 }
 .seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
 .top__link{
-  font-size:var(--step--1);font-weight:500;text-decoration:none;
-  border-bottom:1px solid var(--brass);padding-bottom:1px;color:var(--brass);
+  display:inline-flex;align-items:center;min-height:44px;padding:.6rem 1.15rem;
+  font-size:var(--step--1);font-weight:500;text-decoration:none;border-radius:2px;
+  background:var(--ink);color:var(--paper);transition:background .18s;
 }
-@media (max-width:640px){.top__link{display:none}}
+.top__link:hover{background:var(--brass)}
+@media (max-width:760px){.top__link{display:none}}
 
 /* ─── hero ───────────────────────────────────────────────── */
 .hero{
@@ -183,6 +185,7 @@ section{padding-block:clamp(3.5rem,8vw,6.5rem)}
 }
 .facts div:last-child{border-right:0;margin-right:0;padding-right:0}
 .facts b{display:block;font-weight:500;color:var(--ink);font-size:var(--step-0);margin-bottom:.1rem}
+.trust{margin-top:1.35rem;font-size:var(--step--1);color:var(--ink-3);max-width:42em}
 
 /* ─── photo plate ────────────────────────────────────────── */
 .plate{position:relative;background:var(--deep);overflow:hidden;isolation:isolate}
@@ -318,8 +321,9 @@ section{padding-block:clamp(3.5rem,8vw,6.5rem)}
 .close p{color:rgba(232,240,242,.72);max-width:36em;margin-top:1rem}
 .close__grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,auto);gap:clamp(2rem,5vw,4rem);align-items:end}
 @media (max-width:760px){.close__grid{grid-template-columns:1fr;align-items:start}}
-.contacts{display:flex;flex-direction:column;gap:.55rem;font-size:var(--step--1)}
-.contacts a{color:var(--brass-lift);text-decoration:none;border-bottom:1px solid rgba(185,138,72,.35);width:fit-content}
+.contacts{display:flex;flex-direction:column;gap:.1rem;font-size:var(--step--1)}
+.contacts a{display:inline-flex;align-items:center;min-height:44px;color:var(--brass-lift);
+  text-decoration:none;border-bottom:1px solid rgba(185,138,72,.35);width:fit-content}
 .contacts a:hover{border-bottom-color:var(--brass-lift)}
 .contacts span{color:rgba(232,240,242,.45);letter-spacing:.1em;text-transform:uppercase;font-size:.7rem}
 
@@ -327,14 +331,27 @@ section{padding-block:clamp(3.5rem,8vw,6.5rem)}
 .foot .wrap{display:flex;flex-wrap:wrap;gap:.6rem 1.5rem;justify-content:space-between;
   padding-block:1.5rem;font-size:.78rem}
 
+.mbar{
+  display:none;position:fixed;inset:auto 0 0 0;z-index:30;
+  background:var(--paper);border-top:1px solid var(--line);
+  padding:.65rem var(--pad) calc(.65rem + env(safe-area-inset-bottom));
+  transform:translateY(110%);transition:transform .25s ease-out;
+}
+.mbar.show{transform:none}
+.mbar a{display:flex;align-items:center;justify-content:center;min-height:48px;width:100%}
+@media (max-width:760px){
+  .mbar{display:block}
+  body{padding-bottom:5.5rem}
+}
+
 /* ─── mode switching ─────────────────────────────────────── */
 body.mode-law .only-psy,body.mode-psy .only-law{display:none}
 
 /* ─── motion ─────────────────────────────────────────────── */
-.rise{opacity:0;transform:translateY(14px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)}
+.rise{opacity:0;transform:translateY(12px);transition:opacity .38s cubic-bezier(.33,1,.68,1),transform .38s cubic-bezier(.33,1,.68,1)}
 .rise.in{opacity:1;transform:none}
-.rise:nth-child(2){transition-delay:.07s}
-.rise:nth-child(3){transition-delay:.14s}
+.rise:nth-child(2){transition-delay:.05s}
+.rise:nth-child(3){transition-delay:.1s}
 @media (prefers-reduced-motion:reduce){
   .rise{opacity:1;transform:none;transition:none}
   *{animation:none!important;scroll-behavior:auto!important}
@@ -389,6 +406,9 @@ html{scroll-behavior:smooth}
         <div><b data-psy="5 500 ₽" data-law="от 12 000 ₽">5 500 ₽</b><span data-psy="за встречу, 50 минут" data-law="за этап, фиксированно">за встречу, 50 минут</span></div>
         <div><b data-psy="Онлайн" data-law="Москва и МО">Онлайн</b><span data-psy="Zoom, из любого города" data-law="суды общей юрисдикции">Zoom, из любого города</span></div>
         <div><b data-psy="20 минут" data-law="30 минут">20 минут</b><span data-psy="первый разговор — бесплатно" data-law="разбор ситуации — бесплатно">первый разговор — бесплатно</span></div>
+        <p class="trust"
+           data-psy="МГУ, факультет психологии · гештальт-подход, 4 года · личная терапия и супервизия"
+           data-law="Адвокатская палата г. Москвы · 14 лет практики · более 200 дел">МГУ, факультет психологии · гештальт-подход, 4 года · личная терапия и супервизия</p>
       </div>
     </div>
   </div>
@@ -576,6 +596,10 @@ html{scroll-behavior:smooth}
   </section>
 </main>
 
+<div class="mbar" aria-hidden="true">
+  <a class="btn btn--solid" href="#contact" data-psy="Записаться на встречу" data-law="Описать ситуацию">Записаться на встречу</a>
+</div>
+
 <footer class="foot">
   <div class="wrap">
     <span>© 2026 · <span data-psy="Анна Ветрова" data-law="Дмитрий Корнев">Анна Ветрова</span></span>
@@ -602,6 +626,15 @@ html{scroll-behavior:smooth}
     b.addEventListener('click',function(){apply(b.dataset.mode);});
   });
   apply('psy');
+
+  var bar=document.querySelector('.mbar'),hero=document.querySelector('.hero');
+  if(bar&&hero&&window.IntersectionObserver){
+    new IntersectionObserver(function(e){
+      var past=!e[0].isIntersecting&&e[0].boundingClientRect.top<0;
+      bar.classList.toggle('show',past);
+      bar.setAttribute('aria-hidden',String(!past));
+    },{threshold:0}).observe(hero);
+  }
 
   var els=document.querySelectorAll('.rise');
   if(!window.IntersectionObserver||matchMedia('(prefers-reduced-motion:reduce)').matches){
